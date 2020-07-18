@@ -1,15 +1,11 @@
 ---
 layout: default
+copyright: true
 ---
 
 <!-- Page Header -->
 {% include intro-header.html type='page' %}
 
-<br />
-<blockquote class="blockquote-center">
-<p id="hitokoto"></p>
-<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-</blockquote>
 
 <!-- Main Content -->
 <div class="container">
@@ -25,6 +21,12 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
+		
+		<br />
+		<blockquote class="blockquote-center">
+		<p id="hitokoto"></p>
+		<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+		</blockquote>
 
                 <!-- Featured Tags -->
                 {% include featured-tags.html %}
