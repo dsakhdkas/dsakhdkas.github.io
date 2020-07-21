@@ -23,10 +23,16 @@ copyright: true
                 sidebar-container">
 		  
 		<h5>一言</h5>
-		<blockquote class="blockquote-center">
-		<p id="from"></p>
-		<script src="https://v1.hitokoto.cn/" defer></script>
-		</blockquote>
+		<script>
+  		fetch('https://v1.hitokoto.cn')
+    		.then(response => response.json())
+    		.then(data => {
+      		const hitokoto = document.getElementById('hitokoto_text')
+      		hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      		hitokoto.innerText = data.hitokoto
+    		})
+    		.catch(console.error)
+		</script>
 
                 <!-- Friends Blog -->
                 {% include friends.html %}
@@ -54,10 +60,16 @@ copyright: true
             ">
 		
 		<h5>一言</h5>
-		<blockquote class="blockquote-center">
-		<p id="from"></p>
-		<script src="https://v1.hitokoto.cn/" defer></script>
-		</blockquote>
+		<script>
+  		fetch('https://v1.hitokoto.cn')
+    		.then(response => response.json())
+    		.then(data => {
+      		const hitokoto = document.getElementById('hitokoto_text')
+      		hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      		hitokoto.innerText = data.hitokoto
+    		})
+    		.catch(console.error)
+		</script>
 
                 <!-- Short About -->
                 {% include short-about.html %}
