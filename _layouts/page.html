@@ -23,16 +23,13 @@ copyright: true
                 sidebar-container">
 		  
 		<h5>一言</h5>
-		<script>
-  		fetch('https://v1.hitokoto.cn')
-    		.then(response => response.json())
-    		.then(data => {
-      		const hitokoto = document.getElementById('hitokoto_text')
-      		hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-      		hitokoto.innerText = data.hitokoto
-    		})
-    		.catch(console.error)
-		</script>
+		<!-- YPN Add 2019-03-22 没有authorDesc时，显示一言经典语句-->
+<% if (post.authorDesc) { %>
+    <p><%= post.authorDesc ? post.authorDesc : theme.webmaster.desc %></p>
+<% }else { %>
+    <script type="text/javascript" src="https://api.lwl12.com/hitokoto/v1?encode=js&charset=utf-8"></script>
+    <p><span id="lwlhitokoto"><script>lwlhitokoto()</script></span></p>
+<% } %>
 
                 <!-- Friends Blog -->
                 {% include friends.html %}
@@ -60,16 +57,13 @@ copyright: true
             ">
 		
 		<h5>一言</h5>
-		<script>
-  		fetch('https://v1.hitokoto.cn')
-    		.then(response => response.json())
-    		.then(data => {
-      		const hitokoto = document.getElementById('hitokoto_text')
-      		hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-      		hitokoto.innerText = data.hitokoto
-    		})
-    		.catch(console.error)
-		</script>
+		<!-- YPN Add 2019-03-22 没有authorDesc时，显示一言经典语句-->
+<% if (post.authorDesc) { %>
+    <p><%= post.authorDesc ? post.authorDesc : theme.webmaster.desc %></p>
+<% }else { %>
+    <script type="text/javascript" src="https://api.lwl12.com/hitokoto/v1?encode=js&charset=utf-8"></script>
+    <p><span id="lwlhitokoto"><script>lwlhitokoto()</script></span></p>
+<% } %>
 
                 <!-- Short About -->
                 {% include short-about.html %}
